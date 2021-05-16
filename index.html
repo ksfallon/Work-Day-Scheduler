@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -32,17 +32,19 @@
 
         <div id="row-9am" class="row">
 
-          <div id="1hour" class="col-1 time p-4 border">9AM</div>
+          <div id="1hour" class="hour col-1 time p-4 border border-left-0 border-bottom-0 border-dark">9AM</div>
 
           <div class="col-9 p-4 border"></div>
 
-          <button class=" col-1 ui-button ui-widget ui-corner-all ui-button-icon-only p-4 border" title="Button with icon only"><i class="bi bi-calendar-fill"></i></button>
+          <button type="button" class="saveBtn btn-info p-4">
+            <i class="glyphicon glyphicon-floppy-disk"></i>
+          </button>
 
         </div>
 
         <div id="row-10am" class="row">
         
-          <div id="1hour" class="col-1 text-center time p-4 border">10AM</div>
+          <div id="1hour" class="col-1 text-center time p-4 border border-left-0 border-bottom-0 border-dark">10AM</div>
 
           <div class="col-9 p-4 border"></div>
 
@@ -52,7 +54,7 @@
 
         <div id="row-11am" class="row">
         
-          <div id="1hour" class="col-1 text-center time p-4 border">11AM</div>
+          <div id="1hour" class="col-1 text-center time p-4 border border-left-0 border-bottom-0 border-dark">11AM</div>
 
           <div class="col-9 p-4 border"></div>
 
@@ -62,9 +64,9 @@
 
         <div id="row-12pm" class="row">
         
-          <div id="1hour" class="col-1 text-center time p-4 border">12PM</div>
+          <div id="1hour" class="col-1 text-center time p-4 border border-left-0 border-bottom-0 border-dark">12PM</div>
 
-          <div class="col-9 p-4 border"></div>
+          <textarea id="text12pm" class="col-9 p-4 border"></textarea>
 
           <button class=" col-1 ui-button ui-widget ui-corner-all ui-button-icon-only p-4 border" title="Button with icon only"><i class="bi bi-calendar-fill"></i></button>
 
@@ -72,7 +74,7 @@
 
         <div id="row-1pm" class="row">
         
-          <div id="1hour" class="col-1 text-center time p-4 border">1PM</div>
+          <div id="1hour" class="col-1 text-center time p-4 border border-left-0 border-bottom-0 border-dark">1PM</div>
 
           <div class="col-9 p-4 border"></div>
 
@@ -82,7 +84,7 @@
 
         <div id="row-2pm" class="row">
         
-          <div id="1hour" class="col-1 text-center time p-4 border">2PM</div>
+          <div id="1hour" class="col-1 text-center time p-4 border border-left-0 border-bottom-0 border-dark">2PM</div>
 
           <div class="col-9 p-4 border"></div>
 
@@ -92,7 +94,7 @@
 
         <div id="row-4pm" class="row">
         
-          <div id="1hour" class="col-1 text-center time p-4 border">3PM</div>
+          <div id="1hour" class="col-1 text-center time p-4 border border-left-0 border-bottom-0 border-dark">3PM</div>
 
           <div class="col-9 p-4 border"></div>
 
@@ -102,7 +104,7 @@
 
         <div id="row-4pm" class="row">
         
-          <div id="1hour" class="col-1 text-center time p-4 border">4PM</div>
+          <div id="1hour" class="col-1 text-center time p-4 border border-left-0 border-bottom-0 border-dark">4PM</div>
 
           <div class="col-9 p-4 border"></div>
 
@@ -112,7 +114,7 @@
 
         <div id="row-5pm" class="row">
         
-          <div id="1hour" class="col-1 text-center time p-4 border">5PM</div>
+          <div id="1hour" class="col-1 text-center time p-4 border border-left-0 border-bottom-0 border-dark">5PM</div>
 
           <div class="col-9 p-4 border"></div>
 
