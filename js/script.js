@@ -7,6 +7,9 @@ buttonTen = document.querySelector('#btn10')
 // if time listed is the current hour: make background color red
 // if time listed already happened, in the past of current time: make background color grey
 // if time listed is in the future, hasn't happened in comparison to current time: make background color green
+var today = moment();
+$("#currentDay").text(today.format('dddd') + ", " + today.format('MMM do'));
+
 
 function localStorageNineAm(event) {
     event.preventDefault();
