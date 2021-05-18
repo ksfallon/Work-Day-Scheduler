@@ -69,12 +69,12 @@ textarea {
 
 .bi {
   align-items: center;
-  font-size: 16px;
+  font-size: 25px;
   color: white;
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
+  font-size: 25px;
   transition: all 0.3s ease-in-out;
   color: black;
 }
