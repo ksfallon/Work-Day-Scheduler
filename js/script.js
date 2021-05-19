@@ -17,8 +17,24 @@ function changeTextColor() {
 
     
     for (var i = 9; i < 18; i++) {
-        var timeElement = document.getElementsByClassName("row");
+        // var timeElement = document.getElementsByClassName("row");
         var element = document.getElementById(i).id
+
+        if (currentHourEl === element){
+            element.classList.add(".present")
+            element.classList.remove(".past")
+            element.classList.remove(".future")
+
+        } else if (currentHourEl > element){
+            element.classList.add(".past")
+            element.classList.remove(".present")
+            element.classList.remove(".future")
+
+        } else {
+            element.classList.add(".future")
+            element.classList.remove(".present")
+            element.classList.remove(".past")
+        }
      
         console.log("Ids List:", element);   // IDstring.push(timeElement.children(".hour")[attr.id(i)]);
     }
