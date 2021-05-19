@@ -15,12 +15,14 @@ var IDstring = []
 
 function changeTextColor() {
 
-    var timeElement = document.getElementsByClassName("row");
-    for (var i = 0; i < 9; i++) {
-        
-        IDstring.push(timeElement.children(".hour")[attr.id(i)]);
+    
+    for (var i = 9; i < 18; i++) {
+        var timeElement = document.getElementsByClassName("row");
+        var element = document.getElementById(i).id
+     
+        console.log("Ids List:", element);   // IDstring.push(timeElement.children(".hour")[attr.id(i)]);
     }
-    console.log("Ids List:", IDstring);
+    
 };
 
 changeTextColor()
@@ -56,7 +58,8 @@ changeTextColor()
 // };
 
 
-
+// all have the same click event
+// check for an ID and use that to save to local storage - maybe make that a key
 function localStorageNineAm(event) {
     event.preventDefault();
 
