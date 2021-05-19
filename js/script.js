@@ -79,17 +79,16 @@ changeTextColor()
 
 
 
-var eventList = []
-// check for an ID and use that to save to local storage - maybe make that a key
-function localSAllEvents(event) {
-    event.preventDefault();
+// var eventList = []
+// // check for an ID and use that to save to local storage - maybe make that a key
+// function localSAllEvents(event) {
+//     event.preventDefault();
 
-    console.log(event);
+//     console.log(event);
 
-    // localStorage.setItem("text9", taskLocal);
-    // console.log("text9", taskLocal);
 
-}
+
+// }
 
 function localStorageNineAm(event) {
     event.preventDefault();
