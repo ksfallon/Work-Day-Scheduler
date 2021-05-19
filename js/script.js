@@ -4,7 +4,7 @@ allButtons = document.querySelector(".saveBtn")
 
 
 var today = moment();
-$("#currentDay").text(today.format('dddd, MMM do'));
+$("#currentDay").text(today.format('dddd, MMM Do'));
 
 // PSEUDO CODE FOR TIME/COLOR CHANGE
 // using Moment.js create a variable that equals current hour only
@@ -91,13 +91,17 @@ function localSAllEvents(event) {
 
 }
 
-// function displayLocalStorage () {
-//     var displayTask = localStorage.getItem("text9");
-//     $("#text9").append(displayTask);
-// }
+function localStorageNineAm(event) {
+    event.preventDefault();
+    var taskLocal = nineAmTask.value
+    localStorage.setItem("text9", taskLocal);
+    console.log("text9", taskLocal);
+}
+function displayLocalStorage () {
+    var displayTask = localStorage.getItem("text9");
+    $("#text9").append(displayTask);
+}
+displayLocalStorage ();
 
-// displayLocalStorage ();
-
-// all have the same click event
-// allButtons.addEventListener('click', localSAllEvents);
+buttonNine.addEventListener('click', localStorageNineAm);
 
