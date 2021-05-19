@@ -8,7 +8,7 @@ $("#currentDay").text(today.format('dddd, MMM Do'));
 
 var hours = $(".hour") 
 
-function changeTextColor() {
+function changeBackgroundColor() {
     
     // currentHourEl is the current time, only the hour, in miliary time (thats why H is capitalized)
     var currentHourEl = moment().format("HH");
@@ -42,9 +42,31 @@ function changeTextColor() {
     })
 };
 
-changeTextColor()
+changeBackgroundColor()
+
+// var eventText = ($(".description").attr("id"))
+// console.log("should give ID", eventText);
 
 
+    $(".saveBtn").click(function() {
+
+        // gives the button id
+        var buttonId = ($(this).attr("id"))
+        console.log("buttonId", buttonId);
+
+        var eventText = ($(".description").val());
+        console.log("inside function", eventText);
+        // var txt = $(eventText).val();
+        console.log(buttonId, eventText);
+
+        var eventHistory = [buttonId, eventText]
+        console.log("String:", eventHistory);
+
+        var localstorageSearches = JSON.parse(localStorage.getItem('calendarHistory')) || [];
+        localstorageSearches.push(eventHistory)
+        localStorage.setItem('calendarHistory', JSON.stringify(localstorageSearches))
+    
+})
 
 // check for an ID and use that to save to local storage - maybe make that a key
 // function localStorageNineAm(event) {
