@@ -2,86 +2,51 @@ buttonNine = document.querySelector('#btn9')
 nineAmTask = document.querySelector("#text9");
 allButtons = document.querySelector(".saveBtn")
 
-
+// gives the current day, Month and date for website header"
 var today = moment();
 $("#currentDay").text(today.format('dddd, MMM Do'));
 
-// PSEUDO CODE FOR TIME/COLOR CHANGE
-// using Moment.js create a variable that equals current hour only
-
-var hours = $(".hour")
-var IDstring = []   
+var hours = $(".hour") 
 
 function changeTextColor() {
     
+    // currentHourEl is the current time, only the hour, in miliary time (thats why H is capitalized)
     var currentHourEl = moment().format("HH");
  
+    // this function takes all of the elements with class "description" and does something for each one
+    // jquery way to do a for loop i think
     $(".description").each(function() {
 
+        // blockId grads the ids from each element with ".description" (=this) splits the id by the "-" and
+        // takes the number and turns it into an integer from a string (parseInt)
         var blockId = parseInt($(this).attr("id").split("-")[1])
-        blockId
+        
         if (blockId < currentHourEl){
+            // if blockId < currentHourEl, then add the class "past" to this specific element which will display
+            // the color grey based on the css
             $(this).addClass("past")
     
         } else if (currentHourEl == blockId){
+            // else if blockId equals currentHourEl, 1st remove class "past", then add class "present" which displays
+            // the color red based on the css
             $(this).removeClass("past")
             $(this).addClass("present")
     
         } else {
+           // if blockId is any other number(basically greater than currentHourEl), 1st remove classes "past"& "present"
+           // then add class future which displays the color green based on the css
            $(this).removeClass("past")
            $(this).removeClass("present")
            $(this).addClass("future")
         }
     })
-    console.log(currentHourEl)
 };
 
 changeTextColor()
 
-// create an array of all of the ids(9,10,11,12,1,2,3,4,5) with the class "hour"
-    // should i do parent(.row)child(class(.hour)(attr.id)append - not exactly but something like this?
-    //maybe instead its a push?
-    // create a for loop that creates this list:
-    // for (var i = 0; i < 9; i++)
-    // would length = 8 or 9?
- 
-//Now need to compare each thing in string to currentHourEl
-    //run through for loop again? 
-    // create a single variable for general items in list? 
-// if time listed is the current hour: make background color red
-// if time listed already happened, in the past of current time: make background color grey
-// if time listed is in the future, hasn't happened in comparison to current time: make background color green
-// Need to create an array, that grabs the ids from every hour
 
 
-
-// for (var i = 0; i < 9; i++) {}
-
-// function changeTextColor() {
-
-// localStorage.setItem("current-Hour", currentHourEl);
-//     var currentHourEl = localStorage.getItem("current-Hour");
-//     var hourInput = $(this.parentNode).children('.hour').attr('id');
-
-//     for (var i = 0; i < .length; i++) {}
-//     if (currentHourEl == )
-
-   
-// };
-
-
-
-// var eventList = []
-// // check for an ID and use that to save to local storage - maybe make that a key
-// function localSAllEvents(event) {
-//     event.preventDefault();
-
-//     console.log(event);
-
-
-
-// }
-
+// check for an ID and use that to save to local storage - maybe make that a key
 // function localStorageNineAm(event) {
 //     event.preventDefault();
 //     var taskLocal = nineAmTask.value
