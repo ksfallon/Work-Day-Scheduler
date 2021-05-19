@@ -48,25 +48,44 @@ changeBackgroundColor()
 // console.log("should give ID", eventText);
 
 
-    $(".saveBtn").click(function() {
-
+    $(".saveBtn").click(function(event) {
+        event.preventDefault();
         // gives the button id
+        var localstorageSearches = JSON.parse(localStorage.getItem('calendarHistory')) || [];
+        
         var buttonId = ($(this).attr("id"))
         console.log("buttonId", buttonId);
 
-        var eventText = ($(".description").val());
+        var rowParent = $(this).parent();
+        console.log("rowParent", rowParent);
+
+        var textChild = $(rowParent).children(".description")
+        console.log("textChild", textChild);
+
+        var textID = ($(textChild).attr("id"))
+        console.log("textID", textID);
+
+        var eventText = ($(textChild).val());
         console.log("inside function", eventText);
-        // var txt = $(eventText).val();
-        console.log(buttonId, eventText);
 
-        var eventHistory = [buttonId, eventText]
-        console.log("String:", eventHistory);
+        var eventHistory = {textareaName: textID, textareaEvent: eventText}
+        console.log("eventHistory", eventHistory);
 
-        var localstorageSearches = JSON.parse(localStorage.getItem('calendarHistory')) || [];
-        localstorageSearches.push(eventHistory)
+        localstorageSearches.push(eventHistory);
+
         localStorage.setItem('calendarHistory', JSON.stringify(localstorageSearches))
-    
+        console.log("will thiswork:", localstorageSearches);
+
+        // return;
+
 })
+
+// function displayLocalStorage () {
+//     var displayTasks = JSON.parse(localStorage.getItem('calendarHistory'));
+//     console.log("local storage", displayTasks);
+//     // $("#calendarHistory").append(displayTask);
+// }
+// displayLocalStorage ();
 
 // check for an ID and use that to save to local storage - maybe make that a key
 // function localStorageNineAm(event) {
