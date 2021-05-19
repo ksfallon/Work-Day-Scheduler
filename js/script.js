@@ -8,13 +8,29 @@ $("#currentDay").text(today.format('dddd, MMM do'));
 
 // PSEUDO CODE FOR TIME/COLOR CHANGE
 // using Moment.js create a variable that equals current hour only
-var currentHourEl = moment().format('h');
-// create a list of all of the ids(9,10,11,12,1,2,3,4,5) with the class "hour"
-    // should i do parent(.row)child(class(.hour)(attr.id)append - not exactly but something like this?
-    // create a for loop that creates this array
-    // would length = 8 or 9?
+var currentHourEl = moment().format('H');
+console.log(currentHourEl);
 var hours = $(".hour")
-var IDstring = ""    
+var IDstring = []   
+
+function changeTextColor() {
+
+    var timeElement = document.getElementsByClassName("row");
+    for (var i = 0; i < 9; i++) {
+        
+        IDstring.push(timeElement.children(".hour")[attr.id(i)]);
+    }
+    console.log("Ids List:", IDstring);
+};
+
+changeTextColor()
+// create an array of all of the ids(9,10,11,12,1,2,3,4,5) with the class "hour"
+    // should i do parent(.row)child(class(.hour)(attr.id)append - not exactly but something like this?
+    //maybe instead its a push?
+    // create a for loop that creates this list:
+    // for (var i = 0; i < 9; i++)
+    // would length = 8 or 9?
+ 
 //Now need to compare each thing in string to currentHourEl
     //run through for loop again? 
     // create a single variable for general items in list? 
@@ -25,8 +41,8 @@ var IDstring = ""
 
 
 
-// for (var i = 0; i < array.length; i++) {}
-console.log(currentHourEl);
+// for (var i = 0; i < 9; i++) {}
+
 // function changeTextColor() {
 
 // localStorage.setItem("current-Hour", currentHourEl);
