@@ -8,44 +8,36 @@ $("#currentDay").text(today.format('dddd, MMM Do'));
 
 // PSEUDO CODE FOR TIME/COLOR CHANGE
 // using Moment.js create a variable that equals current hour only
-var currentHourEl = moment().format('H');
-console.log(currentHourEl);
+
 var hours = $(".hour")
 var IDstring = []   
 
 function changeTextColor() {
-
     
-    for (var i = 9; i < 18; i++) {
-        // var timeElement = document.getElementsByClassName("row");
-        var element = document.getElementById(i).id
+    var currentHourEl = moment().format("HH");
+ 
+    $(".description").each(function() {
 
-        if (currentHourEl > element){
-            // element.classList.add("future")
+        var blockId = parseInt($(this).attr("id").split("-")[1])
+        blockId
+        if (blockId < currentHourEl){
+            $(this).addClass("past")
+    
+        } else if (currentHourEl == blockId){
+            $(this).removeClass("past")
+            $(this).addClass("present")
+    
+        } else {
+           $(this).removeClass("past")
+           $(this).removeClass("present")
+           $(this).addClass("future")
         }
-
-        // if (currentHourEl === element){
-            // element.classList.add(".present")
-            // element.classList.remove(".past")
-            // element.classList.remove(".future")
-
-        // } else if (currentHourEl > element){
-        //     element.classList.add(".past")
-        //     element.classList.remove(".present")
-        //     element.classList.remove(".future")
-
-        // } else {
-        //     element.classList.add(".future")
-        //     element.classList.remove(".present")
-        //     element.classList.remove(".past")
-        // }
-     
-        console.log("Ids List:", element);   // IDstring.push(timeElement.children(".hour")[attr.id(i)]);
-    }
-    
+    })
+    console.log(currentHourEl)
 };
 
 changeTextColor()
+
 // create an array of all of the ids(9,10,11,12,1,2,3,4,5) with the class "hour"
     // should i do parent(.row)child(class(.hour)(attr.id)append - not exactly but something like this?
     //maybe instead its a push?
@@ -90,17 +82,17 @@ changeTextColor()
 
 // }
 
-function localStorageNineAm(event) {
-    event.preventDefault();
-    var taskLocal = nineAmTask.value
-    localStorage.setItem("text9", taskLocal);
-    console.log("text9", taskLocal);
-}
-function displayLocalStorage () {
-    var displayTask = localStorage.getItem("text9");
-    $("#text9").append(displayTask);
-}
-displayLocalStorage ();
+// function localStorageNineAm(event) {
+//     event.preventDefault();
+//     var taskLocal = nineAmTask.value
+//     localStorage.setItem("text9", taskLocal);
+//     console.log("text9", taskLocal);
+// }
+// function displayLocalStorage () {
+//     var displayTask = localStorage.getItem("text9");
+//     $("#text9").append(displayTask);
+// }
+// displayLocalStorage ();
 
-buttonNine.addEventListener('click', localStorageNineAm);
+// buttonNine.addEventListener('click', localStorageNineAm);
 
