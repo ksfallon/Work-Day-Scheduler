@@ -50,42 +50,36 @@ changeBackgroundColor()
 
     $(".saveBtn").click(function(event) {
         event.preventDefault();
-        // gives the button id
+        
         var localstorageSearches = JSON.parse(localStorage.getItem('calendarHistory')) || [];
         
-        var buttonId = ($(this).attr("id"))
-        console.log("buttonId", buttonId);
-
         var rowParent = $(this).parent();
-        console.log("rowParent", rowParent);
-
         var textChild = $(rowParent).children(".description")
-        console.log("textChild", textChild);
-
         var textID = ($(textChild).attr("id"))
-        console.log("textID", textID);
-
         var eventText = ($(textChild).val());
-        console.log("inside function", eventText);
-
-        var eventHistory = {textareaName: textID, textareaEvent: eventText}
-        console.log("eventHistory", eventHistory);
+        var eventHistory = [textID, eventText]
 
         localstorageSearches.push(eventHistory);
 
         localStorage.setItem('calendarHistory', JSON.stringify(localstorageSearches))
         console.log("will thiswork:", localstorageSearches);
 
-        // return;
-
 })
 
-// function displayLocalStorage () {
-//     var displayTasks = JSON.parse(localStorage.getItem('calendarHistory'));
-//     console.log("local storage", displayTasks);
+function displayLocalStorage () {
+    var displayTasks = JSON.parse(localStorage.getItem('calendarHistory'));
+    console.log("local storage", displayTasks);
+    // I need to take the key which are each text area's ID and append the value (the input) that text area
+    $.each(displayTasks, function(key, value) {
+        if (key == ($("textarea").attr("id"))) {
+            ($("textarea").attr("id")).append(value);
+        }
+    })
+
+
 //     // $("#calendarHistory").append(displayTask);
-// }
-// displayLocalStorage ();
+}
+displayLocalStorage ();
 
 // check for an ID and use that to save to local storage - maybe make that a key
 // function localStorageNineAm(event) {
