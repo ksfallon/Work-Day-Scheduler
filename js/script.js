@@ -1,6 +1,6 @@
 buttonNine = document.querySelector('#btn9')
 nineAmTask = document.querySelector("#text9");
-buttonTen = document.querySelector('#btn10')
+allButtons = document.querySelector(".saveBtn")
 
 
 var today = moment();
@@ -20,21 +20,25 @@ function changeTextColor() {
         // var timeElement = document.getElementsByClassName("row");
         var element = document.getElementById(i).id
 
-        if (currentHourEl === element){
-            element.classList.add(".present")
-            element.classList.remove(".past")
-            element.classList.remove(".future")
-
-        } else if (currentHourEl > element){
-            element.classList.add(".past")
-            element.classList.remove(".present")
-            element.classList.remove(".future")
-
-        } else {
-            element.classList.add(".future")
-            element.classList.remove(".present")
-            element.classList.remove(".past")
+        if (currentHourEl > element){
+            // element.classList.add("future")
         }
+
+        // if (currentHourEl === element){
+            // element.classList.add(".present")
+            // element.classList.remove(".past")
+            // element.classList.remove(".future")
+
+        // } else if (currentHourEl > element){
+        //     element.classList.add(".past")
+        //     element.classList.remove(".present")
+        //     element.classList.remove(".future")
+
+        // } else {
+        //     element.classList.add(".future")
+        //     element.classList.remove(".present")
+        //     element.classList.remove(".past")
+        // }
      
         console.log("Ids List:", element);   // IDstring.push(timeElement.children(".hour")[attr.id(i)]);
     }
@@ -74,25 +78,26 @@ changeTextColor()
 // };
 
 
-// all have the same click event
+
+var eventList = []
 // check for an ID and use that to save to local storage - maybe make that a key
-function localStorageNineAm(event) {
+function localSAllEvents(event) {
     event.preventDefault();
 
-    var taskLocal = nineAmTask.value
+    console.log(event);
 
-    localStorage.setItem("text9", taskLocal);
-    console.log("text9", taskLocal);
+    // localStorage.setItem("text9", taskLocal);
+    // console.log("text9", taskLocal);
 
 }
 
-function displayLocalStorage () {
-    var displayTask = localStorage.getItem("text9");
-    $("#text9").append(displayTask);
-}
+// function displayLocalStorage () {
+//     var displayTask = localStorage.getItem("text9");
+//     $("#text9").append(displayTask);
+// }
 
-displayLocalStorage ();
+// displayLocalStorage ();
 
-
-buttonNine.addEventListener('click', localStorageNineAm);
+// all have the same click event
+// allButtons.addEventListener('click', localSAllEvents);
 
