@@ -14,16 +14,16 @@ var IDstring = []
 
 function changeTextColor() {
     
-    var currentHourEl = moment().hours();
+    var currentHourEl = moment().format("HH");
  
-    $(".time-block").each(function() {
+    $(".description").each(function() {
 
         var blockId = parseInt($(this).attr("id").split("-")[1])
         blockId
         if (blockId < currentHourEl){
             $(this).addClass("past")
     
-        } else if (currentHourEl === blockId){
+        } else if (currentHourEl == blockId){
             $(this).removeClass("past")
             $(this).addClass("present")
     
