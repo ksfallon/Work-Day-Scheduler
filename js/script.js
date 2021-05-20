@@ -39,7 +39,9 @@ function changeBackgroundColor() {
            $(this).removeClass("present")
            $(this).addClass("future")
         }
-    })
+
+
+    });
 };
 
 changeBackgroundColor()
@@ -51,35 +53,48 @@ changeBackgroundColor()
     $(".saveBtn").click(function(event) {
         event.preventDefault();
         
-        var localstorageSearches = JSON.parse(localStorage.getItem('calendarHistory')) || [];
+        // var localstorageSearches = JSON.parse(localStorage.getItem('calendarHistory')) || [];
         
         var rowParent = $(this).parent();
         var textChild = $(rowParent).children(".description")
         var textID = ($(textChild).attr("id"))
         var eventText = ($(textChild).val());
-        var eventHistory = [textID, eventText]
+        // var eventHistory = [textID, eventText]
+        localStorage.setItem(textID, eventText)
 
-        localstorageSearches.push(eventHistory);
+        displayLocalStorage ();
+        // localstorageSearches.push(eventHistory);
 
-        localStorage.setItem('calendarHistory', JSON.stringify(localstorageSearches))
-        console.log("will thiswork:", localstorageSearches);
+        // localStorage.setItem('calendarHistory', JSON.stringify(localstorageSearches))
+        // console.log("will thiswork:", localstorageSearches);
 
 })
 
 function displayLocalStorage () {
-    var displayTasks = JSON.parse(localStorage.getItem('calendarHistory'));
-    console.log("local storage", displayTasks);
+    
     // I need to take the key which are each text area's ID and append the value (the input) that text area
-    $.each(displayTasks, function(key, value) {
-        if (key == ($("textarea").attr("id"))) {
-            ($("textarea").attr("id")).append(value);
-        }
-    })
+    var htmlTextId = ($('textarea').attr("id"))
+    // for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+        
+        var displayCalendar = JSON.parse(localStorage.getItem( key(i)) );
+        // var displayFavoritesList = JSON.parse(localStorage.getItem("savedRecipe"));
+        console.log(displayCalendar)
+        // if (displayCalendar == htmlTextId) {
+        //     $(htmlTextId)
+        // }
+
+        // if ( displayCalendar == )
+    //   }
+    // $.each(displayTasks, function(key, value) {
+    //     if (key == ($("textarea").attr("id"))) {
+    //         ($("textarea").attr("id")).append(value);
+    //     }
+    }
 
 
-//     // $("#calendarHistory").append(displayTask);
-}
-displayLocalStorage ();
+// //     // $("#calendarHistory").append(displayTask);
+// }
+// displayLocalStorage ();
 
 // check for an ID and use that to save to local storage - maybe make that a key
 // function localStorageNineAm(event) {
