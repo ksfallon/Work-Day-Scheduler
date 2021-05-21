@@ -27,116 +27,88 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <!-- the today moment.js function connects here at "currentDay"-->
       <p id="currentDay" class="lead"></p>
     </header>
+    
+    <!-- grandparent container for body of webpage -->
       <div class="container">
-
+        <!-- one of the 9 parent "rows" for each block of time -->
         <div id="block-9" class="row time-block">
-
+          <!-- child 1 - part of first column in row one, for 9am -->
           <div id="9am" class="hour col-1 text-center time p-4">9AM</div>
-
+          <!-- child 2 - input area for hour 9'd work-day events -->
           <textarea id="text-9" class=" description form-control col-10" aria-label="With textarea"></textarea>
-
+          <!-- child 3 - button for hour 9's input -->
           <a id="btn9" type="button" class="col-1 saveBtn btn-info">
             <i class="bi bi-calendar-plus"></i>    
           </a>
 
         </div>
-
+        <!-- all the parent rows and children are structured the same as 9am just
+        with different ids to specificy which time-block they are in. -->
         <div id="block-10" class="row time-block">
-
           <div id="10am" class="hour col-1 text-center time p-4">10AM</div>
-
           <textarea id="text-10" class="description form-control col-10" aria-label="With textarea"></textarea>
-
           <a id="btn10" type="button" class="col-1 saveBtn btn-info">
             <i class="bi bi-calendar-plus"></i>    
           </a>
-
         </div>
         
         <div id="block-11" class="row time-block">
-        
           <div id="11am" class="hour col-1 text-center time p-4">11AM</div>
-
           <textarea id="text-11"  class="description form-control col-10" aria-label="With textarea"></textarea>
-
           <a id="btn11" type="button" class="col-1 saveBtn btn-info">
             <i class="bi bi-calendar-plus"></i>    
           </a>
-
         </div>
 
         <div id="block-12" class="row time-block">
-        
           <div id="12am" class="hour col-1 text-center time p-4">12PM</div>
-
           <textarea id="text-12" class="description form-control col-10" aria-label="With textarea"></textarea>
-
           <a id="btn12" type="button" class="col-1 saveBtn btn-info">
             <i class="bi bi-calendar-plus"></i>    
           </a>
-
         </div>
 
         <div id="block-13" class="row time-block">
-        
           <div id="1pm" class="hour col-1 text-center time p-4">1PM</div>
-
           <textarea id="text-13" class="description form-control col-10" aria-label="With textarea"></textarea>
-
           <a id="btn1" type="button" class="col-1 saveBtn btn-info">
             <i class="bi bi-calendar-plus"></i>    
           </a>
-
         </div>
 
         <div id="block-14" class="row time-block">
-        
           <div id="2pm" class="hour col-1 text-center time p-4">2PM</div>
-
           <textarea id="text-14" class="description form-control col-10" aria-label="With textarea"></textarea>
-
           <a id="btn2" type="button" class="col-1 saveBtn btn-info">
             <i class="bi bi-calendar-plus"></i>    
           </a>
-
         </div>
 
         <div id="block-15" class="row time-block">
-        
           <div id="3pm" class="hour col-1 text-center time p-4">3PM</div>
-
           <textarea id="text-15" class="description form-control col-10" aria-label="With textarea"></textarea>
-
           <a id="btn3" type="button" class="col-1 saveBtn btn-info">
             <i class="bi bi-calendar-plus"></i>    
           </a>
-
         </div>
 
         <div id="block-16" class="row time-block">
-        
           <div id="4pm" class="hour col-1 text-center time p-4">4PM</div>
-
           <textarea id="text-16" class="description form-control col-10" aria-label="With textarea"></textarea>
-
           <a id="btn4" type="button" class="col-1 saveBtn btn-info">
             <i class="bi bi-calendar-plus"></i>    
           </a>
-
         </div>
 
         <div id="block-17" class="row time-block">
-        
           <div id="5pm" class="hour col-1 text-center time p-4">5PM</div>
-
           <textarea id="text-17" class="description form-control col-10" aria-label="With textarea"></textarea>
-
           <a id="btn5" type="button" class="col-1 saveBtn btn-info">
             <i class="bi bi-calendar-plus"></i>    
           </a>
-
         </div>
 
       </div>

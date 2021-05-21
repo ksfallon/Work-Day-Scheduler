@@ -42,26 +42,36 @@ function changeBackgroundColor() {
 
 changeBackgroundColor()
 
-
-    $(".saveBtn").click(function(event) {
-        event.preventDefault();
-                
-        var rowParent = $(this).parent();
-        var textChild = $(rowParent).children(".description")
-        var textID = ($(textChild).attr("id"))
-        var eventText = ($(textChild).val());
-        
-        localStorage.setItem(textID, eventText)
+// add an eventlistner(click) to all buttons with class "saveBtn"
+$(".saveBtn").click(function(event) {
+    event.preventDefault();
+    // used this to refer to "saveBtn" to grab the parent which are the "row" divs
+    var rowParent = $(this).parent();
+    // from the rowParent's i want to grab the children with the class "description"
+    var textChild = $(rowParent).children(".description")
+    // from the all of the div's with ".description" I need to set their ids to a var
+    var textID = ($(textChild).attr("id"))
+    // from the all of the div's with ".description" I need to get the input values
+    var eventText = ($(textChild).val());
+    
+    // I can set the textID and eventText as key, value pairs in localStorage
+    localStorage.setItem(textID, eventText)
 
 })
 
-
+// grab values from localStorage and display them on webpage
 function displayLocalStorage () {
+    // i starts at 9 because of the work hours and is less than 18 bc of miliary time
     for(var i = 9; i < 18; i++) {
-    var keyName = "text-" + i;
-    var displayTask = localStorage.getItem(keyName);
-    var keySelector = "#" + keyName;
-    $(keySelector).append(displayTask);
+        //to get the specifc key from local storage I need to add "text-" and "i"
+        var keyName = "text-" + i;
+        // then i can plug in keyName to localStorage.getItem to get the values
+        var displayTask = localStorage.getItem(keyName);
+        // to make keyName a callable Id in jQuery I need to add "#" before it
+        var keySelector = "#" + keyName;
+        // now i can append the correct values(displayTask) to the correct keySelector
+        // (or id) in HTML and have it display on the webpage
+        $(keySelector).append(displayTask);
 }
 }
 
