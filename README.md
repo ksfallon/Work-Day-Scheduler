@@ -37,7 +37,7 @@ var blockId = parseInt($(this).attr("id").split("-")[1])
 - I used jquery each() to write my 4 loop, and wrote an if, else if, else statement. 
     - if currentHourEl > blockId, and I added class past, , else if currentHourEl === blockId i removed class past and added class present, and else would remove classes past and present and add future.
     - by doing this the color changes as the time changes.
-![Hour-Colors](https://github.com/ksfallon/Work-Day-Scheduler/blob/main/images%26gifs/WebsiteShowingTime.png)
+![Hour-Colors](https://github.com/ksfallon/Work-Day-Scheduler/blob/main/images%26gifs/WebpageShowingColor%26CurrentTime.png)
 
 3. To save input to local storage, I set a click event to every div with the class "saveBtn" which every hour has. I wanted to save the id from the textarea as the key and the textarea input as the value in local storage. I did this in order to be able to apend them properly in my final displayLocalStorage function. 
 - To go from the "saveBtn" class of the button div to the "text-i" id of the textarea div required some children to parent and then parent to children variables.
