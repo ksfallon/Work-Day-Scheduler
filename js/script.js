@@ -97,6 +97,17 @@ function displayLocalStorage () {
 // displayLocalStorage ();
 
 // check for an ID and use that to save to local storage - maybe make that a key
+function displayLocalStorage () {
+    for(var i = 9; i < 18; i++) {
+    var keyName = "text-" + i;
+    var displayTask = localStorage.getItem(keyName);
+    console.log(displayTask);
+    var keySelector = "#" + keyName;
+    $(keySelector).append(displayTask);
+    console.log(keySelector);
+}
+}
+
 // function localStorageNineAm(event) {
 //     event.preventDefault();
 //     var taskLocal = nineAmTask.value
@@ -107,7 +118,7 @@ function displayLocalStorage () {
 //     var displayTask = localStorage.getItem("text9");
 //     $("#text9").append(displayTask);
 // }
-// displayLocalStorage ();
+displayLocalStorage ();
 
 // buttonNine.addEventListener('click', localStorageNineAm);
 
