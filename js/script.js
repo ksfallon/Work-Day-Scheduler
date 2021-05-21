@@ -46,57 +46,20 @@ function changeBackgroundColor() {
 
 changeBackgroundColor()
 
-// var eventText = ($(".description").attr("id"))
-// console.log("should give ID", eventText);
-
 
     $(".saveBtn").click(function(event) {
         event.preventDefault();
-        
-        // var localstorageSearches = JSON.parse(localStorage.getItem('calendarHistory')) || [];
-        
+                
         var rowParent = $(this).parent();
         var textChild = $(rowParent).children(".description")
         var textID = ($(textChild).attr("id"))
         var eventText = ($(textChild).val());
-        // var eventHistory = [textID, eventText]
+        
         localStorage.setItem(textID, eventText)
-
-        displayLocalStorage ();
-        // localstorageSearches.push(eventHistory);
-
-        // localStorage.setItem('calendarHistory', JSON.stringify(localstorageSearches))
-        // console.log("will thiswork:", localstorageSearches);
 
 })
 
-function displayLocalStorage () {
-    
-    // I need to take the key which are each text area's ID and append the value (the input) that text area
-    var htmlTextId = ($('textarea').attr("id"))
-    // for ( var i = 0, len = localStorage.length; i < len; ++i ) {
-        
-        var displayCalendar = JSON.parse(localStorage.getItem( key(i)) );
-        // var displayFavoritesList = JSON.parse(localStorage.getItem("savedRecipe"));
-        console.log(displayCalendar)
-        // if (displayCalendar == htmlTextId) {
-        //     $(htmlTextId)
-        // }
 
-        // if ( displayCalendar == )
-    //   }
-    // $.each(displayTasks, function(key, value) {
-    //     if (key == ($("textarea").attr("id"))) {
-    //         ($("textarea").attr("id")).append(value);
-    //     }
-    }
-
-
-// //     // $("#calendarHistory").append(displayTask);
-// }
-// displayLocalStorage ();
-
-// check for an ID and use that to save to local storage - maybe make that a key
 function displayLocalStorage () {
     for(var i = 9; i < 18; i++) {
     var keyName = "text-" + i;
@@ -108,17 +71,7 @@ function displayLocalStorage () {
 }
 }
 
-// function localStorageNineAm(event) {
-//     event.preventDefault();
-//     var taskLocal = nineAmTask.value
-//     localStorage.setItem("text9", taskLocal);
-//     console.log("text9", taskLocal);
-// }
-// function displayLocalStorage () {
-//     var displayTask = localStorage.getItem("text9");
-//     $("#text9").append(displayTask);
-// }
 displayLocalStorage ();
 
-// buttonNine.addEventListener('click', localStorageNineAm);
+
 

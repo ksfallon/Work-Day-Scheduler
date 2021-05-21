@@ -66,10 +66,7 @@ textarea {
   color: white;
 }
 
-/* added to third column with the buttons */
 .saveBtn {
-  /* display: flex;
-  justify-content: center; */
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
