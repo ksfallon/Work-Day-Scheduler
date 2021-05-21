@@ -1,7 +1,3 @@
-buttonNine = document.querySelector('#btn9')
-nineAmTask = document.querySelector("#text9");
-allButtons = document.querySelector(".saveBtn")
-
 // gives the current day, Month and date for website header"
 var today = moment();
 $("#currentDay").text(today.format('dddd, MMM Do'));
@@ -12,7 +8,7 @@ function changeBackgroundColor() {
     
     // currentHourEl is the current time, only the hour, in miliary time (thats why H is capitalized)
     var currentHourEl = moment().format("HH");
- 
+
     // this function takes all of the elements with class "description" and does something for each one
     // jquery way to do a for loop i think
     $(".description").each(function() {
@@ -35,9 +31,9 @@ function changeBackgroundColor() {
         } else {
            // if blockId is any other number(basically greater than currentHourEl), 1st remove classes "past"& "present"
            // then add class future which displays the color green based on the css
-           $(this).removeClass("past")
-           $(this).removeClass("present")
-           $(this).addClass("future")
+            $(this).removeClass("past")
+            $(this).removeClass("present")
+            $(this).addClass("future")
         }
 
 
@@ -64,10 +60,8 @@ function displayLocalStorage () {
     for(var i = 9; i < 18; i++) {
     var keyName = "text-" + i;
     var displayTask = localStorage.getItem(keyName);
-    console.log(displayTask);
     var keySelector = "#" + keyName;
     $(keySelector).append(displayTask);
-    console.log(keySelector);
 }
 }
 
