@@ -69,3 +69,5 @@ var blockId = parseInt($(this).attr("id").split("-")[1])
 ```jQuery
  $(keySelector).append(displayTask);
 ```
+---
+Licensed under the MIT License
