@@ -70,4 +70,4 @@ var blockId = parseInt($(this).attr("id").split("-")[1])
  $(keySelector).append(displayTask);
 ```
 ---
-Licensed under the MIT License
+Licensed under the [MIT License](https://choosealicense.com/licenses/mit/#).
